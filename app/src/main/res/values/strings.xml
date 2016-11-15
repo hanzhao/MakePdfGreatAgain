@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Make PDF Great Again</string>
+    <string name="action_open_file">Open File</string>
+</resources>
