@@ -2,4 +2,11 @@
     <string name="app_name">Make PDF Great Again</string>
     <string name="action_open_file">Open File</string>
     <string name="action_highlight">Highlight</string>
+    <string name="uploading_dialog_title">Making PDF Great</string>
+    <string name="uploading_dialog_message">Synchronizing file with server...</string>
+    <string name="network_error">Network error. Check your network connection and try again.</string>
+    <string name="note_dialog_title">Add a note</string>
+    <string name="add_note_hint">Add your note here</string>
+    <string name="notes">Notes</string>
+    <string name="send_ok">Add a note in this page successfully.</string>
 </resources>

@@ -2,6 +2,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.github.magicae.makepdfgreatagain.makepdfgreatagain.MainActivity">
+    <group android:id="@+id/group_document_action"
+        android:visible="false">
+        <item android:id="@+id/action_show_notes"
+            android:icon="@drawable/ic_library_books"
+            android:title="Notes"
+            app:showAsAction="ifRoom" />
+    </group>
     <item
         android:id="@+id/action_open_file"
         android:orderInCategory="100"
