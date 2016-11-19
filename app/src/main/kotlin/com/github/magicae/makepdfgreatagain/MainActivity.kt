@@ -22,7 +22,7 @@ import java.io.IOException
 class MainActivity : AppCompatActivity() {
 
   private val FILE_SELECT_CODE = 40001
-  private val SERVER = "https://make-pdf-great-again.magica.io"
+  private val SERVER = "http://make-pdf-great-again.magica.io"
 
   private var mActionMode: ActionMode? = null
   private var progress: ProgressDialog? = null
