@@ -22,6 +22,7 @@ import java.io.IOException
 class MainActivity : AppCompatActivity() {
 
   private val FILE_SELECT_CODE = 40001
+  // If you need to deploy a new server, please change the server hostname to yours.
   private val SERVER = "http://make-pdf-great-again.magica.io"
 
   private var mActionMode: ActionMode? = null
@@ -30,8 +31,10 @@ class MainActivity : AppCompatActivity() {
   private val fileService = FileService()
   private val noteService = NoteService()
 
+  // Name of current open file.
   var filename = ""
 
+  // ActionMode setup.
   override fun onActionModeStarted(mode: ActionMode?) {
     if (mActionMode == null) {
       mActionMode = mode
@@ -66,11 +69,12 @@ class MainActivity : AppCompatActivity() {
     setContentView(R.layout.activity_main)
     val toolbar = findViewById(R.id.toolbar) as Toolbar
     setSupportActionBar(toolbar)
-    // Add note.
+    // Add note button listener.
     val fab = findViewById(R.id.fab) as FloatingActionButton
     fab.setOnClickListener {
       onFabClicked()
     }
+    // Setup webview.
     val webView = findViewById(R.id.webview) as XWalkView
     webView.settings.javaScriptEnabled = true
     webView.settings.domStorageEnabled = true
@@ -109,6 +113,7 @@ class MainActivity : AppCompatActivity() {
         intent.putExtra("server", SERVER)
         intent.putExtra("filename", filename)
         intent.putExtra("page", page)
+        // Start note activity.
         startActivity(intent)
       }
     }

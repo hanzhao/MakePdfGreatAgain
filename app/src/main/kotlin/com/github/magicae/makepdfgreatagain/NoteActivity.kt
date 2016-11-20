@@ -21,6 +21,7 @@ class NoteActivity : AppCompatActivity() {
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.activity_note)
+    // Setup toolbar of note activity.
     val toolbar = findViewById(R.id.note_toolbar) as Toolbar
     toolbar.setTitle(R.string.notes)
     setSupportActionBar(toolbar)
@@ -29,6 +30,7 @@ class NoteActivity : AppCompatActivity() {
       onBackPressed()
     }
 
+    // Use recycler view to list note cards.
     val recyclerView = findViewById(R.id.recycler_view) as RecyclerView
     recyclerView.setHasFixedSize(true)
     recyclerView.layoutManager = LinearLayoutManager(this)
@@ -41,6 +43,7 @@ class NoteActivity : AppCompatActivity() {
     val page = intent.extras.getInt("page")
     val filename = intent.extras.getString("filename")
 
+    // Get notes from server and only show notes of this page.
     noteService.getNote(server, filename, object : Callback {
       override fun onResponse(call: Call?, response: Response?) {
         val body = response!!.body()!!.string()

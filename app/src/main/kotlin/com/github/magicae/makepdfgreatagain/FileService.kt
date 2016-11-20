@@ -9,16 +9,18 @@ import java.io.*
 import java.math.BigInteger
 import java.security.MessageDigest
 
-
+// FileService for HTTP file APIs.
 class FileService {
   val MEDIA_TYPE_PDF: MediaType? = MediaType.parse("application/pdf")
 
+  // Upload a PDF file to server.
   fun uploadFile(context: Context, server: String, uri: Uri?, callback: Callback) {
     if (uri == null) return
     val digest = MessageDigest.getInstance("SHA1")
     var sha1: String
     var inputStream: InputStream? = null
 
+    // Copy inputStream to a new temp file.
     try {
       inputStream = context.contentResolver.openInputStream(uri)
       val buffer = ByteArray(8192)
